@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccxmvoit3imf1"]
+
+[ext_resource type="Texture2D" uid="uid://ciqg0dyaimx6f" path="res://resource/tileset/props.png" id="1_5pkq7"]
+[ext_resource type="Texture2D" uid="uid://crykl57w2jsax" path="res://resource/tileset/propsShadows.png" id="2_iy8wc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tauud"]
+size = Vector2(12, 4)
+
+[node name="StarTree" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_tauud")
+
+[node name="TreeSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("1_5pkq7")
+region_enabled = true
+region_rect = Rect2(8, 56, 24, 48)
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("2_iy8wc")
+region_enabled = true
+region_rect = Rect2(8, 56, 24, 48)
+
+[node name="DecorationSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("1_5pkq7")
+region_enabled = true
+region_rect = Rect2(32, 56, 24, 48)
+
+[node name="DecorationSprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("1_5pkq7")
+region_enabled = true
+region_rect = Rect2(104, 56, 24, 48)
