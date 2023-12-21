@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c47ds86m2etf"]
+
+[ext_resource type="Texture2D" uid="uid://viyy5cu82b6q" path="res://scenes/snowball/Throw_Orthogonal_s_snowball_f.png" id="1_7vaaf"]
+[ext_resource type="Script" path="res://scenes/snowball/snowball.gd" id="1_fsg6h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5plf"]
+
+[node name="Snowball" type="Area2D"]
+script = ExtResource("1_fsg6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d5plf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12, 0)
+texture = ExtResource("1_7vaaf")
+hframes = 6
+vframes = 4
+frame = 5
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
