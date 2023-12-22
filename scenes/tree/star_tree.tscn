@@ -36,3 +36,10 @@ position = Vector2(0, -22)
 texture = ExtResource("1_5pkq7")
 region_enabled = true
 region_rect = Rect2(104, 56, 24, 48)
+
+[node name="tree_top" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tree_top"]
+polygon = PackedVector2Array(0, -39, 11, -9, -11, -9)
