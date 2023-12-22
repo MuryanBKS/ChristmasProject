@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://w08a2yumcqni"]
+[gd_scene load_steps=9 format=3 uid="uid://w08a2yumcqni"]
 
 [ext_resource type="PackedScene" uid="uid://cvy5564tmxwe2" path="res://scenes/players/human1/human_1.tscn" id="1_nc1s3"]
 [ext_resource type="Script" path="res://scenes/main/world.gd" id="1_tqgmb"]
 [ext_resource type="Texture2D" uid="uid://dh010xdi5muy" path="res://resource/tileset/SnowTileset.png" id="2_ppult"]
 [ext_resource type="PackedScene" uid="uid://ccxmvoit3imf1" path="res://scenes/tree/star_tree.tscn" id="4_r0708"]
 [ext_resource type="PackedScene" uid="uid://dl4dqs1l62100" path="res://scenes/tree/light_tree.tscn" id="5_4d66p"]
+[ext_resource type="PackedScene" uid="uid://dco1clok6kghy" path="res://scenes/orc_enemy/orc_enemy.tscn" id="6_r8luy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nsn41"]
 texture = ExtResource("2_ppult")
@@ -257,7 +258,7 @@ position = Vector2(88, 110)
 position = Vector2(191, 151)
 
 [node name="LightTree" parent="." instance=ExtResource("5_4d66p")]
-position = Vector2(72, 33)
+position = Vector2(76, 40)
 
 [node name="LightTree2" parent="." instance=ExtResource("5_4d66p")]
 position = Vector2(49, 134)
@@ -267,3 +268,6 @@ position = Vector2(62, 155)
 
 [node name="LightTree4" parent="." instance=ExtResource("5_4d66p")]
 position = Vector2(251, 78)
+
+[node name="OrcEnemy" parent="." instance=ExtResource("6_r8luy")]
+position = Vector2(153, 82)

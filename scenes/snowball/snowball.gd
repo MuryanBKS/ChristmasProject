@@ -7,6 +7,9 @@ var speed = 150
 var target_position = Vector2.ZERO
 var ball_position = Vector2.ZERO
 
+func _ready() -> void:
+	animation_player.play("default")
+
 func start(start_position: Vector2, target_pos: Vector2) -> void:
 	position = start_position
 	look_at(target_pos)
