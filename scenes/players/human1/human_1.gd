@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var visual: Node2D = $Visual
-@onready var animation_player: AnimationPlayer = $Visual/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var max_speed = 75.0
 @export var acceleration = 1000

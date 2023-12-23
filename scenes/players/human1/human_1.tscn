@@ -531,6 +531,12 @@ script = ExtResource("1_1kit8")
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_efkbe")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Visual")
+libraries = {
+"": SubResource("AnimationLibrary_3vfdu")
+}
+
 [node name="Visual" type="Node2D" parent="."]
 
 [node name="PlayerSprite2D" type="Sprite2D" parent="Visual"]
@@ -544,8 +550,3 @@ position = Vector2(0, -3)
 texture = ExtResource("4_yoag3")
 hframes = 16
 vframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual"]
-libraries = {
-"": SubResource("AnimationLibrary_3vfdu")
-}

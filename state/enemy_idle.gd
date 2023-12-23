@@ -21,14 +21,6 @@ func update(delta: float) -> void:
 		wander_time -= delta
 	else:
 		randomize_wander()
-	
-	if move_direction.x > 0:
-		visual.scale.x = 1
-	elif move_direction.x < 0:
-		visual.scale.x = -1
-	
-	if animation_player:
-		animation_player.play("walk")
 
 func physics_update(delta: float) -> void:
 	if enemy:
