@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 var can_throw = true
 var pressed_gather = false
+var is_hurt = false
 
 func _physics_process(delta: float) -> void:
 	var input_axis = get_direction()
@@ -27,14 +28,14 @@ func _physics_process(delta: float) -> void:
 			visual.scale.x = -1
 		animation_player.play("throw_front")
 		await animation_player.animation_finished
-		can_throw = true
 		throw_snow_ball(get_global_mouse_position())
+		can_throw = true
 	
 	move_and_slide()
 	update_animation()
 
 func apply_speed(input_axis: Vector2, speed: float) -> void:
-	if input_axis:
+	if input_axis and not is_hurt:
 		velocity = input_axis * speed
 
 func apply_friction(input_axis: Vector2, delta: float) -> void:
@@ -57,12 +58,6 @@ func throw_snow_ball(target_pos: Vector2) -> void:
 func update_animation() -> void:
 	var input_axis = get_direction()
 	
-	#if Input.is_action_pressed("gather"):
-		#pressed_gather = true
-		#animation_player.play("gather_front")
-	#elif Input.is_action_just_released("gather"):
-		#pressed_gather = false
-	
 	if pressed_gather:
 		return
 		
@@ -74,7 +69,21 @@ func update_animation() -> void:
 	elif input_axis.x < 0:
 		visual.scale.x = -1
 		
-	if not input_axis:
-		animation_player.play("idle_front")
-	if input_axis:
+	if input_axis and not is_hurt:
 		animation_player.play("walk_front")
+	elif !input_axis and $IdleTimer.is_stopped():
+		$IdleTimer.start()
+
+
+func _on_health_component_health_changed() -> void:
+	is_hurt = true
+	animation_player.stop()
+	velocity = Vector2()
+	animation_player.play("damage")
+	await animation_player.animation_finished
+	is_hurt = false
+	animation_player.play("idle_front")
+
+
+func _on_idle_timer_timeout() -> void:
+	animation_player.play("idle_front")

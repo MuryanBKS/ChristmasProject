@@ -40,3 +40,10 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.has_method("damage"):
 		area.damage()
+
+
+func _on_fly_timer_timeout() -> void:
+	animation_player.play("explode")
+	speed = 75
+	await animation_player.animation_finished
+	queue_free()

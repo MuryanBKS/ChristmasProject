@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv3wcptxvivyv"]
+
+[ext_resource type="Texture2D" uid="uid://ciqg0dyaimx6f" path="res://resource/tileset/props.png" id="1_vtvqd"]
+[ext_resource type="Texture2D" uid="uid://crykl57w2jsax" path="res://resource/tileset/propsShadows.png" id="2_x5q6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dny8x"]
+size = Vector2(7, 4)
+
+[node name="GreenGift" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_vtvqd")
+region_enabled = true
+region_rect = Rect2(80, 8, 8, 8)
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("2_x5q6h")
+region_enabled = true
+region_rect = Rect2(80, 8, 8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_dny8x")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://mle3bhq7jm75"]
+
+[ext_resource type="Texture2D" uid="uid://ciqg0dyaimx6f" path="res://resource/tileset/props.png" id="1_qdkbx"]
+[ext_resource type="Texture2D" uid="uid://crykl57w2jsax" path="res://resource/tileset/propsShadows.png" id="2_tdu50"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahbnm"]
+size = Vector2(7, 3)
+
+[node name="grass_rock" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("1_qdkbx")
+region_enabled = true
+region_rect = Rect2(8, 8, 8, 8)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("2_tdu50")
+region_enabled = true
+region_rect = Rect2(8, 8, 8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_ahbnm")

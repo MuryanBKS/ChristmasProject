@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://csei473mhetx8"]
+
+[ext_resource type="Texture2D" uid="uid://ciqg0dyaimx6f" path="res://resource/tileset/props.png" id="1_fmhyu"]
+[ext_resource type="Texture2D" uid="uid://crykl57w2jsax" path="res://resource/tileset/propsShadows.png" id="2_sart1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brkot"]
+size = Vector2(8, 4)
+
+[node name="Snowman" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_fmhyu")
+region_enabled = true
+region_rect = Rect2(24, 8, 16, 16)
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("2_sart1")
+region_enabled = true
+region_rect = Rect2(24, 8, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_brkot")

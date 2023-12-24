@@ -8,6 +8,7 @@ class_name EnemyIdle
 @export var visual: Node2D
 @export var idle_timer: Timer
 @export var move_speed := 10.0
+@export var health_component: HealthComponent
 
 var move_direction: Vector2
 var wander_time: float
@@ -24,6 +25,7 @@ func enter() -> void:
 	chase_area.body_entered.connect(on_chase_area_body_entered)
 	attack_area.body_entered.connect(on_attack_area_body_entered)
 	idle_timer.timeout.connect(on_idle_timer_timeout)
+	health_component.health_changed.connect(on_health_changed)
 	idle_timer.wait_time = randi_range(1, 5)
 	idle_timer.start()
 	
@@ -53,7 +55,11 @@ func on_idle_timer_timeout() -> void:
 	idle_timer.wait_time = randi_range(1, 5)
 	idle_timer.start()
 
+func on_health_changed() -> void:
+	transitioned.emit(self, "EnemyDamaged")
+
 func exit() -> void:
 	chase_area.body_entered.disconnect(on_chase_area_body_entered)
 	attack_area.body_entered.disconnect(on_attack_area_body_entered)
 	idle_timer.timeout.disconnect(on_idle_timer_timeout)
+	health_component.health_changed.disconnect(on_health_changed)
