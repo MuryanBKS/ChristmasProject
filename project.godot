@@ -63,6 +63,7 @@ gather={
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="snowball"
 2d_physics/layer_5="tree_top"
+2d_physics/layer_6="hitbox"
 
 [rendering]
 

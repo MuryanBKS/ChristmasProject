@@ -1,14 +1,17 @@
 extends Area2D
-class_name snowball
+class_name Snowball
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var speed = 150
+var speed = 90
 var target_position = Vector2.ZERO
 var ball_position = Vector2.ZERO
+var attack_damage = 1
 
 func _ready() -> void:
 	animation_player.play("default")
+	await get_tree().create_timer(.1).timeout
+	monitoring = true
 
 func start(start_position: Vector2, target_pos: Vector2) -> void:
 	position = start_position
@@ -33,3 +36,7 @@ func _on_body_entered(body: Node2D) -> void:
 	speed = 75
 	await animation_player.animation_finished
 	queue_free()
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.has_method("damage"):
+		area.damage()
