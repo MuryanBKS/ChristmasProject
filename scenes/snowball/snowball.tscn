@@ -180,6 +180,7 @@ script = ExtResource("1_fsg6h")
 shape = SubResource("CircleShape2D_d5plf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12, 0)
 texture = ExtResource("1_7vaaf")
 hframes = 6
 vframes = 4

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5ksu7ifbntgg"]
+
+[ext_resource type="AudioStream" uid="uid://ddp0a7yeihh5i" path="res://resource/music/demo_jinglebells.wav" id="1_3nqfi"]
+[ext_resource type="Script" path="res://scenes/autoload/bgm.gd" id="2_xiw48"]
+
+[node name="BGM" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_3nqfi")
+autoplay = true
+script = ExtResource("2_xiw48")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

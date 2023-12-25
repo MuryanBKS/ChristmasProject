@@ -21,4 +21,4 @@ func damage() -> void:
 			GameEvent.player_died.emit()
 		else:
 			if get_tree().get_nodes_in_group("enemies").size() == 1:
-				print("win")
+				GameEvent.win.emit()
