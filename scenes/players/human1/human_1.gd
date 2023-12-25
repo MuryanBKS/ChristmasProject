@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	apply_friction(input_axis, delta)
 	
 	if Input.is_action_just_pressed("throw"):
+		var target_pos = get_global_mouse_position()
 		can_throw = false
 		if get_local_mouse_position().x > 0:
 			visual.scale.x = 1
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 			visual.scale.x = -1
 		animation_player.play("throw_front")
 		await animation_player.animation_finished
-		throw_snow_ball(get_global_mouse_position())
+		throw_snow_ball(target_pos)
 		can_throw = true
 	
 	move_and_slide()
@@ -48,12 +49,15 @@ func get_direction() -> Vector2:
 	return direction
 
 func throw_snow_ball(target_pos: Vector2) -> void:
+	$IdleTimer.start()
 	var snowball_scene_instance = snowball_scene.instantiate()
 	var direction = (target_pos - position).normalized()
 	snowball_scene_instance.target_position = target_pos
-	snowball_scene_instance.ball_position = position + direction * 10
-	snowball_scene_instance.start(position + direction * 10, target_pos)
+	snowball_scene_instance.ball_position = position + direction * 20
+	snowball_scene_instance.start(position + direction * 20, target_pos)
 	get_tree().root.add_child(snowball_scene_instance)
+	
+	
 
 func update_animation() -> void:
 	var input_axis = get_direction()
@@ -70,8 +74,9 @@ func update_animation() -> void:
 		visual.scale.x = -1
 		
 	if input_axis and not is_hurt:
+		$IdleTimer.start()
 		animation_player.play("walk_front")
-	elif !input_axis and $IdleTimer.is_stopped():
+	elif !input_axis:
 		$IdleTimer.start()
 
 
@@ -86,4 +91,6 @@ func _on_health_component_health_changed() -> void:
 
 
 func _on_idle_timer_timeout() -> void:
+	if velocity.length() > 0:
+		return
 	animation_player.play("idle_front")

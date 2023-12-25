@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqdtpegxcrr42"]
+[gd_scene load_steps=7 format=3 uid="uid://bqdtpegxcrr42"]
 
 [ext_resource type="Texture2D" uid="uid://ciqg0dyaimx6f" path="res://resource/tileset/props.png" id="1_m511o"]
 [ext_resource type="Texture2D" uid="uid://crykl57w2jsax" path="res://resource/tileset/propsShadows.png" id="2_pfcq4"]
+[ext_resource type="Script" path="res://scenes/players/human1/HealthComponent.gd" id="3_ftikp"]
+[ext_resource type="Script" path="res://scenes/players/human1/HitboxComponent.gd" id="4_gkr7o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ygek"]
 size = Vector2(7, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihekn"]
+size = Vector2(7, 7)
 
 [node name="RedGift" type="StaticBody2D"]
 collision_mask = 0
@@ -24,3 +29,14 @@ region_rect = Rect2(112, 8, 8, 8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_3ygek")
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("3_ftikp")
+max_health = 3
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("4_gkr7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_ihekn")

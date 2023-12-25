@@ -56,7 +56,7 @@ func on_cooldown_timer_timeout() -> void:
 	animation_player.play("throw")
 	await animation_player.animation_finished
 	throw()
-	cooldown_timer.wait_time = randf_range(.3,2)
+	cooldown_timer.wait_time = randf_range(1,5)
 	cooldown_timer.start()
 	
 	

@@ -763,6 +763,12 @@ position = Vector2(35, 84)
 [node name="OrcEnemy3" parent="." instance=ExtResource("6_r8luy")]
 position = Vector2(91, 43)
 
+[node name="OrcEnemy4" parent="." instance=ExtResource("6_r8luy")]
+position = Vector2(32, 41)
+
+[node name="OrcEnemy5" parent="." instance=ExtResource("6_r8luy")]
+position = Vector2(217, 44)
+
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -899,7 +905,7 @@ position = Vector2(96, 184)
 position = Vector2(260, 187)
 
 [node name="LightTree23" parent="Trees" instance=ExtResource("5_4d66p")]
-position = Vector2(276, 184)
+position = Vector2(274, 182)
 
 [node name="LightTree24" parent="Trees" instance=ExtResource("5_4d66p")]
 position = Vector2(290, 187)
@@ -908,7 +914,7 @@ position = Vector2(290, 187)
 position = Vector2(304, 185)
 
 [node name="StarTree17" parent="Trees" instance=ExtResource("4_r0708")]
-position = Vector2(319, 182)
+position = Vector2(316, 180)
 
 [node name="LightTree25" parent="Trees" instance=ExtResource("5_4d66p")]
 position = Vector2(123, 183)
@@ -949,14 +955,50 @@ position = Vector2(195, 143)
 [node name="small_rock2" parent="Decorations" instance=ExtResource("9_nrova")]
 position = Vector2(293, 46)
 
+[node name="small_rock3" parent="Decorations" instance=ExtResource("9_nrova")]
+position = Vector2(319, 115)
+
 [node name="BigRock" parent="Decorations" instance=ExtResource("9_u78x2")]
 position = Vector2(76, 36)
+
+[node name="BigRock6" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(2, 94)
+
+[node name="BigRock7" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(0, 127)
 
 [node name="BigRock2" parent="Decorations" instance=ExtResource("9_u78x2")]
 position = Vector2(4, 153)
 
+[node name="BigRock16" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(6, 165)
+
+[node name="BigRock17" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(-1, 179)
+
 [node name="BigRock3" parent="Decorations" instance=ExtResource("9_u78x2")]
 position = Vector2(316, 83)
+
+[node name="BigRock11" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(307, 42)
+
+[node name="BigRock19" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(227, 24)
+
+[node name="BigRock12" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(309, 55)
+
+[node name="BigRock10" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(306, 123)
+
+[node name="BigRock8" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(318, 109)
+
+[node name="BigRock9" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(319, 141)
+
+[node name="BigRock18" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(313, 175)
 
 [node name="BigRock4" parent="Decorations" instance=ExtResource("9_u78x2")]
 position = Vector2(136, 104)
@@ -964,14 +1006,44 @@ position = Vector2(136, 104)
 [node name="tall_rock" parent="Decorations" instance=ExtResource("11_a6umu")]
 position = Vector2(307, 68)
 
+[node name="tall_rock5" parent="Decorations" instance=ExtResource("11_a6umu")]
+position = Vector2(314, 94)
+
+[node name="tall_rock8" parent="Decorations" instance=ExtResource("11_a6umu")]
+position = Vector2(308, 130)
+
+[node name="tall_rock6" parent="Decorations" instance=ExtResource("11_a6umu")]
+position = Vector2(316, 152)
+
+[node name="tall_rock7" parent="Decorations" instance=ExtResource("11_a6umu")]
+position = Vector2(316, 162)
+
 [node name="tall_rock2" parent="Decorations" instance=ExtResource("11_a6umu")]
 position = Vector2(258, 42)
 
 [node name="tall_rock3" parent="Decorations" instance=ExtResource("11_a6umu")]
-position = Vector2(25, 118)
+position = Vector2(1, 140)
+
+[node name="tall_rock9" parent="Decorations" instance=ExtResource("11_a6umu")]
+position = Vector2(17, 37)
+
+[node name="tall_rock10" parent="Decorations" instance=ExtResource("11_a6umu")]
+position = Vector2(8, 108)
+
+[node name="tall_rock4" parent="Decorations" instance=ExtResource("11_a6umu")]
+position = Vector2(7, 135)
 
 [node name="BigRock5" parent="Decorations" instance=ExtResource("9_u78x2")]
-position = Vector2(3, 30)
+position = Vector2(4, 19)
+
+[node name="BigRock13" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(6, 31)
+
+[node name="BigRock14" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(10, 46)
+
+[node name="BigRock15" parent="Decorations" instance=ExtResource("9_u78x2")]
+position = Vector2(8, 55)
 
 [node name="Snowman" parent="Decorations" instance=ExtResource("7_lpfax")]
 position = Vector2(130, 79)
@@ -984,6 +1056,9 @@ position = Vector2(263, 45)
 
 [node name="grass_rock2" parent="Decorations" instance=ExtResource("11_jlpmr")]
 position = Vector2(39, 68)
+
+[node name="grass_rock4" parent="Decorations" instance=ExtResource("11_jlpmr")]
+position = Vector2(0, 102)
 
 [node name="grass_rock3" parent="Decorations" instance=ExtResource("11_jlpmr")]
 position = Vector2(129, 25)
@@ -1013,7 +1088,7 @@ position = Vector2(160, 49)
 position = Vector2(105, 33)
 
 [node name="grass9" parent="Decorations" instance=ExtResource("12_lkb7b")]
-position = Vector2(10, 17)
+position = Vector2(16, 20)
 
 [node name="grass10" parent="Decorations" instance=ExtResource("12_lkb7b")]
 position = Vector2(9, 141)
