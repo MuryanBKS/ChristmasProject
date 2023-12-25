@@ -32,17 +32,20 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	set_deferred("monitoring", false)
 	animation_player.play("explode")
 	speed = 75
 	await animation_player.animation_finished
 	queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
+	set_deferred("monitoring", false)
 	if area.has_method("damage"):
 		area.damage()
 
 
 func _on_fly_timer_timeout() -> void:
+	set_deferred("monitoring", false)
 	animation_player.play("explode")
 	speed = 75
 	await animation_player.animation_finished

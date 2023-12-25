@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var visual: Node2D = $Visual
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@export var world: Node2D
 @export var max_speed = 75.0
 @export var acceleration = 1000
 @export var snowball_scene = preload("res://scenes/snowball/snowball.tscn")
@@ -10,9 +10,15 @@ extends CharacterBody2D
 var can_throw = true
 var pressed_gather = false
 var is_hurt = false
+var is_start = false
+
+func _ready() -> void:
+	world.game_start.connect(on_game_start)
 
 func _physics_process(delta: float) -> void:
 	var input_axis = get_direction()
+	if not is_start:
+		return
 	
 	if not can_throw or pressed_gather:
 		input_axis = Vector2.ZERO
@@ -94,3 +100,7 @@ func _on_idle_timer_timeout() -> void:
 	if velocity.length() > 0:
 		return
 	animation_player.play("idle_front")
+
+
+func on_game_start() -> void:
+	is_start = true

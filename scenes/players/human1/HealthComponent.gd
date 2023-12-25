@@ -19,6 +19,7 @@ func damage() -> void:
 		if get_parent() == player:
 			player_died.emit()
 		else:
-			print(get_tree().get_nodes_in_group("enemies").size())
+			if get_tree().get_nodes_in_group("enemies").size() == 1:
+				print("win")
 			
 		get_parent().queue_free()

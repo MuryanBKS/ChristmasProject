@@ -489,7 +489,7 @@ radius = 117.004
 radius = 92.0054
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa1w0"]
-radius = 4.0
+radius = 7.0
 
 [node name="OrcEnemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
@@ -595,5 +595,5 @@ script = ExtResource("12_ef10j")
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(0, -4)
+position = Vector2(-1, -4)
 shape = SubResource("CircleShape2D_wa1w0")

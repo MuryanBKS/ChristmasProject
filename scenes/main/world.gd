@@ -1,6 +1,14 @@
 extends Node2D
 
-@export var background: Color
+signal game_start
+
+@onready var button: Button = %Button
+
 
 func _ready() -> void:
-	RenderingServer.set_default_clear_color(background)
+	pass
+
+
+func _on_button_button_down() -> void:
+	game_start.emit()
+	button.hide()
