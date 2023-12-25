@@ -8,26 +8,29 @@ extends CharacterBody2D
 @export var snowball_scene = preload("res://scenes/snowball/snowball.tscn")
 
 var can_throw = true
-var pressed_gather = false
+var can_move = true
 var is_hurt = false
 var is_start = false
 
 func _ready() -> void:
 	world.game_start.connect(on_game_start)
+	can_move = true
 
 func _physics_process(delta: float) -> void:
 	var input_axis = get_direction()
 	if not is_start:
 		return
-	
-	if not can_throw or pressed_gather:
-		input_axis = Vector2.ZERO
+	if not can_move:
+		return
 	
 	apply_speed(input_axis, max_speed)
 	apply_friction(input_axis, delta)
 	
-	if Input.is_action_just_pressed("throw"):
+	if Input.is_action_just_pressed("throw") and can_throw:
+		can_move = false
 		var target_pos = get_global_mouse_position()
+		if (target_pos - global_position).length() < 10:
+			return
 		can_throw = false
 		if get_local_mouse_position().x > 0:
 			visual.scale.x = 1
@@ -36,7 +39,8 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("throw_front")
 		await animation_player.animation_finished
 		throw_snow_ball(target_pos)
-		can_throw = true
+		$CooldownTimer.start()
+		$StopMoveTimer.start()
 	
 	move_and_slide()
 	update_animation()
@@ -57,23 +61,20 @@ func get_direction() -> Vector2:
 func throw_snow_ball(target_pos: Vector2) -> void:
 	$IdleTimer.start()
 	var snowball_scene_instance = snowball_scene.instantiate()
-	var direction = (target_pos - position).normalized()
-	snowball_scene_instance.target_position = target_pos
-	snowball_scene_instance.ball_position = position + direction * 20
-	snowball_scene_instance.start(position + direction * 20, target_pos)
+	var direction = (target_pos - global_position).normalized()
+	snowball_scene_instance.target_pos = target_pos
+	snowball_scene_instance.direction = direction
+	snowball_scene_instance.start(global_position, 10)
 	get_tree().root.add_child(snowball_scene_instance)
 	
 	
 
 func update_animation() -> void:
 	var input_axis = get_direction()
-	
-	if pressed_gather:
-		return
-		
-	if not can_throw:
-		return
-		
+	#
+	#if not can_throw:
+		#return
+		#
 	if input_axis.x > 0:
 		visual.scale.x = 1
 	elif input_axis.x < 0:
@@ -104,3 +105,11 @@ func _on_idle_timer_timeout() -> void:
 
 func on_game_start() -> void:
 	is_start = true
+
+
+func _on_cooldown_timer_timeout() -> void:
+	can_throw = true
+
+
+func _on_stop_move_timer_timeout() -> void:
+	can_move = true

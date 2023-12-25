@@ -752,7 +752,7 @@ layer_3/name = "decoration_shadow"
 layer_3/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." node_paths=PackedStringArray("world") instance=ExtResource("1_nc1s3")]
-position = Vector2(250, 120)
+position = Vector2(285, 142)
 world = NodePath("..")
 metadata/_edit_group_ = true
 
@@ -769,7 +769,7 @@ position = Vector2(91, 43)
 position = Vector2(32, 41)
 
 [node name="OrcEnemy5" parent="." instance=ExtResource("6_r8luy")]
-position = Vector2(217, 44)
+position = Vector2(192, 54)
 
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1048,10 +1048,10 @@ position = Vector2(8, 108)
 position = Vector2(7, 135)
 
 [node name="BigRock5" parent="Decorations" instance=ExtResource("9_u78x2")]
-position = Vector2(4, 19)
+position = Vector2(23, 31)
 
 [node name="BigRock13" parent="Decorations" instance=ExtResource("9_u78x2")]
-position = Vector2(6, 31)
+position = Vector2(9, 22)
 
 [node name="BigRock14" parent="Decorations" instance=ExtResource("9_u78x2")]
 position = Vector2(10, 46)
@@ -1111,7 +1111,7 @@ position = Vector2(167, 39)
 position = Vector2(84, 28)
 
 [node name="grass9" parent="Decorations" instance=ExtResource("12_lkb7b")]
-position = Vector2(16, 20)
+position = Vector2(10, 29)
 
 [node name="grass10" parent="Decorations" instance=ExtResource("12_lkb7b")]
 position = Vector2(9, 141)
@@ -1147,7 +1147,7 @@ position = Vector2(231, 87)
 position = Vector2(221, 130)
 
 [node name="RedGift2" parent="Decorations" instance=ExtResource("12_6ard3")]
-position = Vector2(233, 80)
+position = Vector2(245, 89)
 
 [node name="BlueHalfGift2" parent="Decorations" instance=ExtResource("13_vn0br")]
 position = Vector2(207, 123)
@@ -1167,10 +1167,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/CenterContainer"]
+[node name="StartButton" type="Button" parent="CanvasLayer/CenterContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("22_yr71f")
 text = "Start"
 
-[connection signal="button_down" from="CanvasLayer/CenterContainer/Button" to="." method="_on_button_button_down"]
+[node name="RestartButton" type="Button" parent="CanvasLayer/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("22_yr71f")
+text = "Restart"
+
+[connection signal="button_down" from="CanvasLayer/CenterContainer/StartButton" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/RestartButton" to="." method="_on_restart_button_button_down"]

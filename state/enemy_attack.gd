@@ -47,9 +47,9 @@ func throw() -> void:
 		return
 	var direction = (player.global_position - enemy.global_position).normalized()
 	var snowball_scene_instance = snowball_scene.instantiate()
-	snowball_scene_instance.target_position = player.global_position
-	snowball_scene_instance.ball_position = enemy.global_position + direction * 10
-	snowball_scene_instance.start(enemy.global_position + direction * 10, player.global_position)
+	snowball_scene_instance.target_pos = player.global_position
+	snowball_scene_instance.direction = direction
+	snowball_scene_instance.start(enemy.global_position, 5)
 	get_tree().root.add_child(snowball_scene_instance)
 
 func on_cooldown_timer_timeout() -> void:
