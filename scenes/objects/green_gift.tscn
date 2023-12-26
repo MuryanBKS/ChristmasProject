@@ -1,13 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://cv3wcptxvivyv"]
+[gd_scene load_steps=12 format=3 uid="uid://cv3wcptxvivyv"]
 
 [ext_resource type="Texture2D" uid="uid://ciqg0dyaimx6f" path="res://resource/tileset/props.png" id="1_vtvqd"]
 [ext_resource type="Texture2D" uid="uid://crykl57w2jsax" path="res://resource/tileset/propsShadows.png" id="2_x5q6h"]
 [ext_resource type="Script" path="res://scenes/players/human1/HealthComponent.gd" id="3_dlef0"]
+[ext_resource type="Script" path="res://scenes/players/human1/HitboxComponent.gd" id="4_ow6ar"]
 [ext_resource type="Script" path="res://scenes/components/death_component.gd" id="4_y14fr"]
 [ext_resource type="Texture2D" uid="uid://c02sya8pf3cs5" path="res://scenes/components/S_Snowball_Impact.png" id="5_oodd3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dny8x"]
 size = Vector2(7, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijqx5"]
+size = Vector2(7, 7)
 
 [sub_resource type="Animation" id="Animation_54lqg"]
 length = 0.001
@@ -134,12 +138,21 @@ region_enabled = true
 region_rect = Rect2(80, 8, 8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_dny8x")
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("3_dlef0")
 max_health = 4
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("4_ow6ar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+visible = false
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_ijqx5")
 
 [node name="DeathComponent" type="Node2D" parent="." node_paths=PackedStringArray("health_component", "animation_player")]
 script = ExtResource("4_y14fr")

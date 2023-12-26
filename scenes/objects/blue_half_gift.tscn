@@ -138,6 +138,7 @@ region_enabled = true
 region_rect = Rect2(96, 24, 8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_ryvkx")
 
@@ -149,6 +150,7 @@ max_health = 2
 script = ExtResource("4_5exep")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+visible = false
 position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_nhh65")
 

@@ -5,6 +5,7 @@ signal game_start
 @onready var start_button: Button = %StartButton
 @onready var restart_button: Button = %RestartButton
 @onready var next_level_button: Button = %NextLevelButton
+@onready var label: Label = %Label
 
 @export var next_level: PackedScene
 
@@ -26,18 +27,20 @@ func _on_start_button_down() -> void:
 	start_button.hide()
 	GameEvent.restart()
 
-
-func _on_restart_button_button_down() -> void:
+func _on_restart_button_down() -> void:
 	get_tree().reload_current_scene()
 
 func on_player_died() -> void:
 	restart_button.show()
 
 func on_win() -> void:
+	if not next_level is PackedScene:
+		label.show()
+		return
 	restart_button.show()
 	next_level_button.show()
 	LevelTransition.fade_to_black()
 
 
-func _on_next_level_button_button_down() -> void:
+func _on_next_level_button_down() -> void:
 	go_to_next_level(next_level)
