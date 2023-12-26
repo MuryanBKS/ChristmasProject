@@ -21,9 +21,10 @@ func go_to_next_level(next_level_scene: PackedScene) -> void:
 	if not next_level is PackedScene: return
 	get_tree().change_scene_to_packed(next_level_scene)
 
-func _on_button_button_down() -> void:
+func _on_start_button_down() -> void:
 	game_start.emit()
 	start_button.hide()
+	GameEvent.restart()
 
 
 func _on_restart_button_button_down() -> void:

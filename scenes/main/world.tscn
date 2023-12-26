@@ -1276,6 +1276,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0di65")
 theme_override_styles/hover = SubResource("StyleBoxFlat_engt5")
 text = "Next Level"
 
-[connection signal="button_down" from="CanvasLayer/CenterContainer/StartButton" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/StartButton" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_button_down"]
