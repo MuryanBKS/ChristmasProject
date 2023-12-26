@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://w08a2yumcqni"]
+[gd_scene load_steps=31 format=3 uid="uid://w08a2yumcqni"]
 
 [ext_resource type="PackedScene" uid="uid://cvy5564tmxwe2" path="res://scenes/players/human1/human_1.tscn" id="1_nc1s3"]
 [ext_resource type="Script" path="res://scenes/main/world.gd" id="1_tqgmb"]
@@ -735,6 +735,54 @@ sources/0 = SubResource("TileSetAtlasSource_nsn41")
 sources/1 = SubResource("TileSetAtlasSource_rmi54")
 sources/2 = SubResource("TileSetAtlasSource_rqps1")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdwsw"]
+bg_color = Color(0, 0.517647, 0.262745, 0.901961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.666667, 0.666667, 0.666667, 0.839216)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ur02t"]
+bg_color = Color(0, 0.72549, 0.376471, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.960784, 0, 0.192157, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5cew"]
+bg_color = Color(0, 0.517647, 0.262745, 0.901961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.843137)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbdjf"]
+bg_color = Color(0, 0.639216, 0.329412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.909804, 0.215686, 0.243137, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="World" type="Node2D" groups=["world"]]
 y_sort_enabled = true
 script = ExtResource("1_tqgmb")
@@ -817,7 +865,7 @@ position = Vector2(266, 25)
 position = Vector2(283, 31)
 
 [node name="LightTree35" parent="Trees" instance=ExtResource("5_4d66p")]
-position = Vector2(213, 128)
+position = Vector2(211, 134)
 
 [node name="LightTree15" parent="Trees" instance=ExtResource("5_4d66p")]
 position = Vector2(298, 33)
@@ -1126,7 +1174,7 @@ position = Vector2(288, 121)
 position = Vector2(252, 84)
 
 [node name="BlueGift2" parent="Decorations" instance=ExtResource("9_55icc")]
-position = Vector2(206, 132)
+position = Vector2(204, 138)
 
 [node name="BlueGift3" parent="Decorations" instance=ExtResource("9_55icc")]
 position = Vector2(225, 84)
@@ -1144,16 +1192,16 @@ position = Vector2(102, 115)
 position = Vector2(231, 87)
 
 [node name="RedCandle" parent="Decorations" instance=ExtResource("15_dsguk")]
-position = Vector2(221, 130)
+position = Vector2(219, 136)
 
 [node name="RedGift2" parent="Decorations" instance=ExtResource("12_6ard3")]
 position = Vector2(245, 89)
 
 [node name="BlueHalfGift2" parent="Decorations" instance=ExtResource("13_vn0br")]
-position = Vector2(207, 123)
+position = Vector2(205, 129)
 
 [node name="GreenHalfGift" parent="Decorations" instance=ExtResource("16_784yu")]
-position = Vector2(215, 134)
+position = Vector2(213, 140)
 
 [node name="GreenHalfGift2" parent="Decorations" instance=ExtResource("16_784yu")]
 position = Vector2(221, 76)
@@ -1170,14 +1218,24 @@ grow_vertical = 2
 [node name="StartButton" type="Button" parent="CanvasLayer/CenterContainer"]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(60, 20)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.882353, 1, 0.945098, 0.894118)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("22_yr71f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gdwsw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ur02t")
 text = "Start"
 
 [node name="RestartButton" type="Button" parent="CanvasLayer/CenterContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.882353, 1, 0.945098, 0.894118)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("22_yr71f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v5cew")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hbdjf")
 text = "Restart"
 
 [connection signal="button_down" from="CanvasLayer/CenterContainer/StartButton" to="." method="_on_button_button_down"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c47ds86m2etf"]
+[gd_scene load_steps=12 format=3 uid="uid://c47ds86m2etf"]
 
 [ext_resource type="Texture2D" uid="uid://viyy5cu82b6q" path="res://scenes/snowball/Throw_Orthogonal_s_snowball_f.png" id="1_7vaaf"]
 [ext_resource type="Script" path="res://scenes/snowball/snowball.gd" id="1_fsg6h"]
 [ext_resource type="Texture2D" uid="uid://cp1rmxxsxcrgh" path="res://scenes/snowball/S_Snowball_Impact.png" id="3_784b1"]
 [ext_resource type="Texture2D" uid="uid://c4hr54jpi88ms" path="res://scenes/snowball/S_Snowball_Projectile.png" id="4_fhea8"]
+[ext_resource type="AudioStream" uid="uid://qkjifuu83mpo" path="res://resource/music/interface2.wav" id="5_i7emb"]
+[ext_resource type="AudioStream" uid="uid://bynosxyvyuq5" path="res://resource/music/swing3.wav" id="6_dg3uk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5plf"]
 radius = 4.12311
@@ -110,6 +112,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [5]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ThrowSoundComponent")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ws4a2"]
 resource_name = "explode"
@@ -162,6 +178,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitSoundComponent")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jc3wn"]
 _data = {
@@ -180,7 +210,7 @@ script = ExtResource("1_fsg6h")
 shape = SubResource("CircleShape2D_d5plf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-12, 0)
+position = Vector2(1, 0)
 texture = ExtResource("1_7vaaf")
 hframes = 6
 vframes = 4
@@ -196,6 +226,12 @@ libraries = {
 [node name="FlyTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="HitSoundComponent" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_i7emb")
+
+[node name="ThrowSoundComponent" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dg3uk")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
