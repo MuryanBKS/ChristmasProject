@@ -19,6 +19,8 @@ func damage() -> void:
 		died.emit()
 		if get_parent() == player:
 			GameEvent.player_died.emit()
-		else:
-			if get_tree().get_nodes_in_group("enemies").size() == 1:
+		elif get_tree().get_nodes_in_group("enemies").has(get_parent()):
+			GameEvent.enemies_count -= 1
+			print(GameEvent.enemies_count)
+			if GameEvent.enemies_count == 0:
 				GameEvent.win.emit()

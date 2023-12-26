@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameEvent="*res://scenes/autoload/game_event.tscn"
 Bgm="*res://scenes/autoload/bgm.tscn"
+LevelTransition="*res://scenes/autoload/level_transition.tscn"
 
 [display]
 
