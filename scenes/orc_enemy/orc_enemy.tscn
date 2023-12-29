@@ -491,7 +491,7 @@ radius = 117.004
 radius = 92.0054
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa1w0"]
-radius = 7.0
+radius = 4.12311
 
 [sub_resource type="Animation" id="Animation_54lqg"]
 length = 0.001
@@ -703,7 +703,6 @@ script = ExtResource("11_qol5a")
 max_health = 5
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
-visible = false
 collision_layer = 32
 collision_mask = 0
 script = ExtResource("12_ef10j")
