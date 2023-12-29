@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 	apply_friction(input_axis, delta)
 	
 	if Input.is_action_just_pressed("throw") and can_throw:
-		can_move = false
 		var target_pos = get_global_mouse_position()
 		if (target_pos - global_position).length() < 10:
 			return
@@ -36,6 +35,7 @@ func _physics_process(delta: float) -> void:
 			visual.scale.x = 1
 		else:
 			visual.scale.x = -1
+		can_move = false
 		animation_player.play("throw_front")
 		await animation_player.animation_finished
 		throw_snow_ball(target_pos)
@@ -64,7 +64,7 @@ func throw_snow_ball(target_pos: Vector2) -> void:
 	var direction = (target_pos - global_position).normalized()
 	snowball_scene_instance.target_pos = target_pos
 	snowball_scene_instance.direction = direction
-	snowball_scene_instance.start(global_position, 10)
+	snowball_scene_instance.start(global_position, 1)
 	get_tree().root.add_child(snowball_scene_instance)
 	
 	

@@ -19,7 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://c02sya8pf3cs5" path="res://scenes/components/S_Snowball_Impact.png" id="17_hokls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tlpy"]
-size = Vector2(7, 3)
+size = Vector2(5, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa1w0"]
+radius = 4.12311
 
 [sub_resource type="Animation" id="Animation_18x5i"]
 length = 0.001
@@ -490,9 +493,6 @@ radius = 117.004
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2vs4"]
 radius = 92.0054
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wa1w0"]
-radius = 4.12311
-
 [sub_resource type="Animation" id="Animation_54lqg"]
 length = 0.001
 tracks/0/type = "value"
@@ -608,7 +608,7 @@ motion_mode = 1
 script = ExtResource("1_kmctx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_5tlpy")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -630,6 +630,16 @@ texture = ExtResource("3_g7asc")
 hframes = 16
 vframes = 4
 frame = 1
+
+[node name="HitboxComponent" type="Area2D" parent="Visual" node_paths=PackedStringArray("health_component")]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("12_ef10j")
+health_component = NodePath("../../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visual/HitboxComponent"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_wa1w0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -701,16 +711,6 @@ debug_color = Color(0.976471, 0, 0.415686, 0.419608)
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("11_qol5a")
 max_health = 5
-
-[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("12_ef10j")
-health_component = NodePath("../HealthComponent")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(-1, -4)
-shape = SubResource("CircleShape2D_wa1w0")
 
 [node name="DeathComponent" type="Node2D" parent="." node_paths=PackedStringArray("health_component", "animation_player")]
 visible = false

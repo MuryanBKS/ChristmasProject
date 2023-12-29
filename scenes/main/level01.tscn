@@ -839,7 +839,7 @@ y_sort_enabled = true
 position = Vector2(8, 9)
 
 [node name="LightTree2" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(50, 30)
+position = Vector2(49, 26)
 
 [node name="LightTree3" parent="Trees" instance=ExtResource("7_dbqh0")]
 position = Vector2(62, 24)
@@ -1007,7 +1007,7 @@ position = Vector2(283, 185)
 position = Vector2(319, 115)
 
 [node name="BigRock" parent="Decorations" instance=ExtResource("10_jrvso")]
-position = Vector2(76, 36)
+position = Vector2(76, 26)
 
 [node name="BigRock21" parent="Decorations" instance=ExtResource("10_jrvso")]
 position = Vector2(5, 76)
@@ -1130,10 +1130,10 @@ position = Vector2(155, 18)
 position = Vector2(259, 22)
 
 [node name="Snowman2" parent="Decorations" instance=ExtResource("12_mdnbj")]
-position = Vector2(78, 44)
+position = Vector2(86, 41)
 
 [node name="grass" parent="Decorations" instance=ExtResource("16_on4lv")]
-position = Vector2(67, 38)
+position = Vector2(67, 31)
 
 [node name="grass2" parent="Decorations" instance=ExtResource("16_on4lv")]
 position = Vector2(124, 88)
@@ -1145,7 +1145,7 @@ position = Vector2(67, 141)
 position = Vector2(167, 39)
 
 [node name="grass8" parent="Decorations" instance=ExtResource("16_on4lv")]
-position = Vector2(84, 28)
+position = Vector2(87, 26)
 
 [node name="grass9" parent="Decorations" instance=ExtResource("16_on4lv")]
 position = Vector2(10, 29)

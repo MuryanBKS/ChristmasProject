@@ -49,7 +49,7 @@ func throw() -> void:
 	var snowball_scene_instance = snowball_scene.instantiate()
 	snowball_scene_instance.target_pos = player.global_position
 	snowball_scene_instance.direction = direction
-	snowball_scene_instance.start(enemy.global_position, 5)
+	snowball_scene_instance.start(enemy.global_position, 1)
 	get_tree().root.add_child(snowball_scene_instance)
 
 func on_cooldown_timer_timeout() -> void:

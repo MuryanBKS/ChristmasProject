@@ -850,7 +850,7 @@ y_sort_enabled = true
 position = Vector2(8, 9)
 
 [node name="LightTree2" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(50, 30)
+position = Vector2(50, 27)
 
 [node name="LightTree3" parent="Trees" instance=ExtResource("8_jiiop")]
 position = Vector2(62, 24)
@@ -1264,6 +1264,7 @@ position = Vector2(191, 72)
 position = Vector2(143, 79)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
