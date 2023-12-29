@@ -202,7 +202,7 @@ _data = {
 
 [node name="Snowball" type="Area2D"]
 collision_layer = 0
-collision_mask = 63
+collision_mask = 47
 monitoring = false
 script = ExtResource("1_fsg6h")
 

@@ -146,8 +146,9 @@ shape = SubResource("RectangleShape2D_3ygek")
 script = ExtResource("3_ftikp")
 max_health = 3
 
-[node name="HitboxComponent" type="Area2D" parent="."]
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 script = ExtResource("4_gkr7o")
+health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 visible = false

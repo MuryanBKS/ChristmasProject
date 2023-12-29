@@ -11,5 +11,4 @@ func _ready() -> void:
 
 func restart() -> void:
 	enemies_count = get_tree().get_nodes_in_group("enemies").size()
-	print(enemies_count)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cyqw6quyhf5mg"]
+[gd_scene load_steps=37 format=3 uid="uid://cyqw6quyhf5mg"]
 
 [ext_resource type="Script" path="res://scenes/main/world.gd" id="1_72kye"]
 [ext_resource type="PackedScene" uid="uid://bgbmeenr8ump3" path="res://scenes/main/Level03.tscn" id="2_7qv5v"]
@@ -809,6 +809,9 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.909804, 0.215686, 0.243137, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2as0h"]
+size = Vector2(320, 11)
+
 [node name="Level02" type="Node2D" groups=["world"]]
 y_sort_enabled = true
 script = ExtResource("1_72kye")
@@ -946,76 +949,76 @@ position = Vector2(247, 8)
 position = Vector2(252, 19)
 
 [node name="LightTree16" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(6, 187)
+position = Vector2(6, 208)
 
 [node name="LightTree17" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(45, 184)
+position = Vector2(45, 205)
 
 [node name="LightTree18" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(58, 186)
+position = Vector2(58, 193)
 
 [node name="LightTree19" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(71, 185)
+position = Vector2(71, 206)
 
 [node name="LightTree20" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(85, 187)
+position = Vector2(88, 196)
 
 [node name="LightTree21" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(110, 187)
+position = Vector2(110, 208)
 
 [node name="StarTree9" parent="Trees" instance=ExtResource("9_xwej7")]
-position = Vector2(33, 187)
+position = Vector2(33, 194)
 
 [node name="StarTree10" parent="Trees" instance=ExtResource("9_xwej7")]
-position = Vector2(19, 185)
+position = Vector2(19, 199)
 
 [node name="StarTree11" parent="Trees" instance=ExtResource("9_xwej7")]
-position = Vector2(96, 184)
+position = Vector2(96, 205)
 
 [node name="LightTree22" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(260, 187)
+position = Vector2(259, 193)
 
 [node name="LightTree23" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(274, 182)
+position = Vector2(274, 195)
 
 [node name="LightTree24" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(290, 187)
+position = Vector2(289, 201)
 
 [node name="StarTree12" parent="Trees" instance=ExtResource("9_xwej7")]
-position = Vector2(304, 185)
+position = Vector2(304, 206)
 
 [node name="StarTree17" parent="Trees" instance=ExtResource("9_xwej7")]
 position = Vector2(316, 180)
 
 [node name="LightTree25" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(123, 183)
+position = Vector2(120, 192)
 
 [node name="LightTree26" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(177, 183)
+position = Vector2(177, 204)
 
 [node name="LightTree27" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(164, 186)
+position = Vector2(164, 207)
 
 [node name="LightTree28" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(190, 186)
+position = Vector2(190, 207)
 
 [node name="LightTree29" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(203, 184)
+position = Vector2(201, 194)
 
 [node name="LightTree30" parent="Trees" instance=ExtResource("8_jiiop")]
-position = Vector2(216, 186)
+position = Vector2(216, 198)
 
 [node name="StarTree13" parent="Trees" instance=ExtResource("9_xwej7")]
-position = Vector2(151, 184)
+position = Vector2(159, 202)
 
 [node name="StarTree14" parent="Trees" instance=ExtResource("9_xwej7")]
-position = Vector2(138, 188)
+position = Vector2(134, 204)
 
 [node name="StarTree15" parent="Trees" instance=ExtResource("9_xwej7")]
-position = Vector2(244, 188)
+position = Vector2(245, 202)
 
 [node name="StarTree16" parent="Trees" instance=ExtResource("9_xwej7")]
-position = Vector2(230, 185)
+position = Vector2(230, 206)
 
 [node name="Decorations" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1024,7 +1027,7 @@ y_sort_enabled = true
 position = Vector2(293, 46)
 
 [node name="small_rock4" parent="Decorations" instance=ExtResource("10_2h3k6")]
-position = Vector2(283, 185)
+position = Vector2(9, 171)
 
 [node name="small_rock3" parent="Decorations" instance=ExtResource("10_2h3k6")]
 position = Vector2(319, 115)
@@ -1073,6 +1076,9 @@ position = Vector2(318, 109)
 
 [node name="BigRock9" parent="Decorations" instance=ExtResource("11_ljcrf")]
 position = Vector2(319, 141)
+
+[node name="BigRock22" parent="Decorations" instance=ExtResource("11_ljcrf")]
+position = Vector2(148, 186)
 
 [node name="BigRock18" parent="Decorations" instance=ExtResource("11_ljcrf")]
 position = Vector2(313, 175)
@@ -1162,7 +1168,7 @@ position = Vector2(155, 18)
 position = Vector2(259, 22)
 
 [node name="Snowman2" parent="Decorations" instance=ExtResource("13_5ahqu")]
-position = Vector2(56, 38)
+position = Vector2(62, 30)
 
 [node name="grass" parent="Decorations" instance=ExtResource("15_0jk1l")]
 position = Vector2(82, 34)
@@ -1264,7 +1270,6 @@ position = Vector2(191, 72)
 position = Vector2(143, 79)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -1325,6 +1330,16 @@ theme_override_fonts/font = ExtResource("16_wkdkr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gwc6s")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7ufeh")
 text = "Next Level"
+
+[node name="Snowballs" type="Node2D" parent="." groups=["snowballs"]]
+y_sort_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(160, 183.5)
+shape = SubResource("RectangleShape2D_2as0h")
 
 [connection signal="button_down" from="CanvasLayer/CenterContainer/StartButton" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_down"]

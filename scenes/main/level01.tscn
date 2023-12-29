@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://eihvptj55jfa"]
+[gd_scene load_steps=29 format=3 uid="uid://eihvptj55jfa"]
 
 [ext_resource type="Script" path="res://scenes/main/world.gd" id="1_1k84q"]
 [ext_resource type="Texture2D" uid="uid://dh010xdi5muy" path="res://resource/tileset/SnowTileset.png" id="2_4rcnk"]
@@ -801,6 +801,9 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.909804, 0.215686, 0.243137, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5scub"]
+size = Vector2(320, 11)
+
 [node name="Level01" type="Node2D" groups=["world"]]
 y_sort_enabled = true
 script = ExtResource("1_1k84q")
@@ -848,10 +851,10 @@ position = Vector2(62, 24)
 position = Vector2(77, 15)
 
 [node name="LightTree5" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(93, 12)
+position = Vector2(89, 12)
 
 [node name="LightTree6" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(108, 14)
+position = Vector2(108, 13)
 
 [node name="LightTree36" parent="Trees" instance=ExtResource("7_dbqh0")]
 position = Vector2(4, 114)
@@ -902,10 +905,10 @@ position = Vector2(177, 33)
 position = Vector2(189, 27)
 
 [node name="LightTree10" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(204, 33)
+position = Vector2(202, 30)
 
 [node name="LightTree11" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(220, 30)
+position = Vector2(214, 27)
 
 [node name="LightTree12" parent="Trees" instance=ExtResource("7_dbqh0")]
 position = Vector2(235, 13)
@@ -923,76 +926,79 @@ position = Vector2(247, 8)
 position = Vector2(252, 19)
 
 [node name="LightTree16" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(6, 187)
+position = Vector2(3, 201)
 
 [node name="LightTree17" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(45, 184)
+position = Vector2(42, 209)
 
 [node name="LightTree18" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(58, 186)
+position = Vector2(55, 199)
 
 [node name="LightTree19" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(71, 185)
+position = Vector2(66, 202)
 
 [node name="LightTree20" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(85, 187)
+position = Vector2(86, 210)
 
 [node name="LightTree21" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(110, 187)
+position = Vector2(104, 201)
 
 [node name="StarTree9" parent="Trees" instance=ExtResource("8_eleqa")]
-position = Vector2(33, 187)
+position = Vector2(28, 203)
 
 [node name="StarTree10" parent="Trees" instance=ExtResource("8_eleqa")]
-position = Vector2(19, 185)
+position = Vector2(14, 207)
 
 [node name="StarTree11" parent="Trees" instance=ExtResource("8_eleqa")]
-position = Vector2(96, 184)
+position = Vector2(93, 207)
 
 [node name="LightTree22" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(260, 187)
+position = Vector2(245, 201)
 
 [node name="LightTree23" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(274, 182)
+position = Vector2(259, 191)
 
 [node name="LightTree24" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(290, 187)
+position = Vector2(272, 207)
+
+[node name="LightTree31" parent="Trees" instance=ExtResource("7_dbqh0")]
+position = Vector2(305, 199)
 
 [node name="StarTree12" parent="Trees" instance=ExtResource("8_eleqa")]
-position = Vector2(304, 185)
+position = Vector2(294, 197)
 
 [node name="StarTree17" parent="Trees" instance=ExtResource("8_eleqa")]
 position = Vector2(316, 180)
 
 [node name="LightTree25" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(123, 183)
+position = Vector2(119, 195)
 
 [node name="LightTree26" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(177, 183)
+position = Vector2(168, 194)
 
 [node name="LightTree27" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(164, 186)
+position = Vector2(159, 211)
 
 [node name="LightTree28" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(190, 186)
+position = Vector2(180, 207)
 
 [node name="LightTree29" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(203, 184)
+position = Vector2(195, 196)
 
 [node name="LightTree30" parent="Trees" instance=ExtResource("7_dbqh0")]
-position = Vector2(216, 186)
+position = Vector2(207, 208)
 
 [node name="StarTree13" parent="Trees" instance=ExtResource("8_eleqa")]
-position = Vector2(151, 184)
+position = Vector2(145, 199)
 
 [node name="StarTree14" parent="Trees" instance=ExtResource("8_eleqa")]
-position = Vector2(138, 188)
+position = Vector2(131, 210)
 
 [node name="StarTree15" parent="Trees" instance=ExtResource("8_eleqa")]
-position = Vector2(244, 188)
+position = Vector2(232, 198)
 
 [node name="StarTree16" parent="Trees" instance=ExtResource("8_eleqa")]
-position = Vector2(230, 185)
+position = Vector2(217, 198)
 
 [node name="Decorations" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1001,7 +1007,7 @@ y_sort_enabled = true
 position = Vector2(293, 46)
 
 [node name="small_rock4" parent="Decorations" instance=ExtResource("9_lhnqi")]
-position = Vector2(283, 185)
+position = Vector2(309, 89)
 
 [node name="small_rock3" parent="Decorations" instance=ExtResource("9_lhnqi")]
 position = Vector2(319, 115)
@@ -1021,6 +1027,9 @@ position = Vector2(2, 94)
 [node name="BigRock7" parent="Decorations" instance=ExtResource("10_jrvso")]
 position = Vector2(0, 127)
 
+[node name="BigRock22" parent="Decorations" instance=ExtResource("10_jrvso")]
+position = Vector2(78, 188)
+
 [node name="BigRock2" parent="Decorations" instance=ExtResource("10_jrvso")]
 position = Vector2(4, 153)
 
@@ -1028,7 +1037,7 @@ position = Vector2(4, 153)
 position = Vector2(6, 165)
 
 [node name="BigRock17" parent="Decorations" instance=ExtResource("10_jrvso")]
-position = Vector2(-1, 179)
+position = Vector2(1, 176)
 
 [node name="BigRock3" parent="Decorations" instance=ExtResource("10_jrvso")]
 position = Vector2(316, 83)
@@ -1050,6 +1059,9 @@ position = Vector2(318, 109)
 
 [node name="BigRock9" parent="Decorations" instance=ExtResource("10_jrvso")]
 position = Vector2(319, 141)
+
+[node name="BigRock23" parent="Decorations" instance=ExtResource("10_jrvso")]
+position = Vector2(282, 187)
 
 [node name="BigRock18" parent="Decorations" instance=ExtResource("10_jrvso")]
 position = Vector2(313, 175)
@@ -1112,7 +1124,7 @@ position = Vector2(190, 36)
 position = Vector2(263, 45)
 
 [node name="grass_rock2" parent="Decorations" instance=ExtResource("13_xgx47")]
-position = Vector2(39, 68)
+position = Vector2(99, 14)
 
 [node name="grass_rock7" parent="Decorations" instance=ExtResource("13_xgx47")]
 position = Vector2(11, 64)
@@ -1121,10 +1133,10 @@ position = Vector2(11, 64)
 position = Vector2(0, 102)
 
 [node name="grass_rock3" parent="Decorations" instance=ExtResource("13_xgx47")]
-position = Vector2(129, 25)
+position = Vector2(143, 11)
 
 [node name="grass_rock5" parent="Decorations" instance=ExtResource("13_xgx47")]
-position = Vector2(155, 18)
+position = Vector2(156, 17)
 
 [node name="grass_rock6" parent="Decorations" instance=ExtResource("13_xgx47")]
 position = Vector2(259, 22)
@@ -1145,7 +1157,7 @@ position = Vector2(67, 141)
 position = Vector2(167, 39)
 
 [node name="grass8" parent="Decorations" instance=ExtResource("16_on4lv")]
-position = Vector2(87, 26)
+position = Vector2(86, 19)
 
 [node name="grass9" parent="Decorations" instance=ExtResource("16_on4lv")]
 position = Vector2(10, 29)
@@ -1220,6 +1232,16 @@ theme_override_fonts/font = ExtResource("22_q81we")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gwc6s")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7ufeh")
 text = "Next Level"
+
+[node name="Snowballs" type="Node2D" parent="." groups=["snowballs"]]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(160, 183.5)
+shape = SubResource("RectangleShape2D_5scub")
 
 [connection signal="button_down" from="CanvasLayer/CenterContainer/StartButton" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_down"]

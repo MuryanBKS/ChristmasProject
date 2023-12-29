@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var max_speed = 75.0
 @export var acceleration = 1000
 @export var snowball_scene = preload("res://scenes/snowball/snowball.tscn")
+@onready var progress_bar: ProgressBar = $Visual/ProgressBar
 
 var can_throw = true
 var can_move = true
@@ -22,13 +23,13 @@ func _physics_process(delta: float) -> void:
 		return
 	if not can_move:
 		return
-	
+	progress_bar.value = $CooldownTimer.time_left
 	apply_speed(input_axis, max_speed)
 	apply_friction(input_axis, delta)
 	
 	if Input.is_action_just_pressed("throw") and can_throw:
 		var target_pos = get_global_mouse_position()
-		if (target_pos - global_position).length() < 10:
+		if (target_pos - global_position).length() < 1:
 			return
 		can_throw = false
 		if get_local_mouse_position().x > 0:
@@ -65,16 +66,12 @@ func throw_snow_ball(target_pos: Vector2) -> void:
 	snowball_scene_instance.target_pos = target_pos
 	snowball_scene_instance.direction = direction
 	snowball_scene_instance.start(global_position, 1)
-	get_tree().root.add_child(snowball_scene_instance)
+	get_tree().get_first_node_in_group("snowballs").add_child(snowball_scene_instance)
 	
 	
 
 func update_animation() -> void:
 	var input_axis = get_direction()
-	#
-	#if not can_throw:
-		#return
-		#
 	if input_axis.x > 0:
 		visual.scale.x = 1
 	elif input_axis.x < 0:

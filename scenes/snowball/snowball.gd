@@ -7,6 +7,7 @@ var target_pos: Vector2
 var speed = 90
 var direction: Vector2
 var attack_damage = 1
+var explode_was_played = false
 
 func _ready() -> void:
 	look_at(target_pos)
@@ -29,21 +30,28 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	speed = 30
+	explode_was_played = true
 	set_deferred("monitoring", false)
-	animation_player.play("explode")
-	await animation_player.animation_finished
+	speed = 10
+	if explode_was_played:
+		animation_player.play("explode")
+		explode_was_played = true
+		await animation_player.animation_finished
 	queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
+	explode_was_played = true
 	set_deferred("monitoring", false)
-	animation_player.play("explode")
+	speed = 10
 	if area.has_method("damage"):
 		area.damage()
-
+	if explode_was_played:
+		animation_player.play("explode")
+		await animation_player.animation_finished
+	queue_free()
 
 func _on_fly_timer_timeout() -> void:
-	speed = 30
+	speed = 10
 	animation_player.play("explode")
 	await animation_player.animation_finished
 	queue_free()

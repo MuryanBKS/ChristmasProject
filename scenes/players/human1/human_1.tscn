@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cvy5564tmxwe2"]
+[gd_scene load_steps=30 format=3 uid="uid://cvy5564tmxwe2"]
 
 [ext_resource type="Script" path="res://scenes/players/human1/human_1.gd" id="1_1kit8"]
 [ext_resource type="Texture2D" uid="uid://6mj157wil6l2" path="res://scenes/players/human1/Idle.png" id="1_3bwp8"]
@@ -629,6 +629,12 @@ _data = {
 "walk_front": SubResource("Animation_b8hxg")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkid8"]
+bg_color = Color(0, 0.713726, 0.470588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ti0js"]
+bg_color = Color(0, 0.207843, 0.12549, 1)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_212r0"]
 radius = 4.0
 
@@ -759,6 +765,18 @@ libraries = {
 
 [node name="Visual" type="Node2D" parent="."]
 
+[node name="ProgressBar" type="ProgressBar" parent="Visual"]
+offset_left = -9.0
+offset_top = -7.0
+offset_right = -7.0
+offset_bottom = 1.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dkid8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ti0js")
+max_value = 0.75
+value = 0.75
+fill_mode = 2
+show_percentage = false
+
 [node name="PlayerSprite2D" type="Sprite2D" parent="Visual"]
 position = Vector2(0, -3)
 texture = ExtResource("1_3bwp8")
@@ -803,6 +821,7 @@ hframes = 4
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.75
+one_shot = true
 
 [node name="StopMoveTimer" type="Timer" parent="."]
 wait_time = 0.2
