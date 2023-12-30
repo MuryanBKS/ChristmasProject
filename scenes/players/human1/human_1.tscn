@@ -801,6 +801,7 @@ shape = SubResource("CircleShape2D_212r0")
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("10_rnhis")
+max_health = 5
 
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -820,7 +821,7 @@ texture = ExtResource("15_tcegt")
 hframes = 4
 
 [node name="CooldownTimer" type="Timer" parent="."]
-wait_time = 0.75
+wait_time = 0.5
 one_shot = true
 
 [node name="StopMoveTimer" type="Timer" parent="."]

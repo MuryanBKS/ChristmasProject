@@ -919,9 +919,6 @@ position = Vector2(0, 81)
 [node name="StarTree19" parent="Trees" instance=ExtResource("8_1ins2")]
 position = Vector2(316, 61)
 
-[node name="StarTree20" parent="Trees" instance=ExtResource("8_1ins2")]
-position = Vector2(319, 127)
-
 [node name="LightTree7" parent="Trees" instance=ExtResource("7_nucr5")]
 position = Vector2(135, 8)
 
@@ -1010,7 +1007,10 @@ position = Vector2(290, 190)
 position = Vector2(303, 200)
 
 [node name="StarTree17" parent="Trees" instance=ExtResource("8_1ins2")]
-position = Vector2(316, 180)
+position = Vector2(323, 156)
+
+[node name="StarTree28" parent="Trees" instance=ExtResource("8_1ins2")]
+position = Vector2(317, 179)
 
 [node name="LightTree25" parent="Trees" instance=ExtResource("7_nucr5")]
 position = Vector2(104, 205)
@@ -1049,7 +1049,7 @@ y_sort_enabled = true
 position = Vector2(195, 143)
 
 [node name="small_rock2" parent="Decorations" instance=ExtResource("9_opow0")]
-position = Vector2(293, 46)
+position = Vector2(318, 66)
 
 [node name="small_rock4" parent="Decorations" instance=ExtResource("9_opow0")]
 position = Vector2(154, 26)
@@ -1082,7 +1082,7 @@ position = Vector2(6, 165)
 position = Vector2(1, 176)
 
 [node name="BigRock3" parent="Decorations" instance=ExtResource("10_j5ip0")]
-position = Vector2(316, 83)
+position = Vector2(314, 87)
 
 [node name="BigRock11" parent="Decorations" instance=ExtResource("10_j5ip0")]
 position = Vector2(307, 42)
@@ -1094,13 +1094,13 @@ position = Vector2(227, 24)
 position = Vector2(309, 55)
 
 [node name="BigRock10" parent="Decorations" instance=ExtResource("10_j5ip0")]
-position = Vector2(306, 123)
+position = Vector2(314, 126)
 
 [node name="BigRock8" parent="Decorations" instance=ExtResource("10_j5ip0")]
 position = Vector2(318, 109)
 
 [node name="BigRock9" parent="Decorations" instance=ExtResource("10_j5ip0")]
-position = Vector2(319, 141)
+position = Vector2(316, 142)
 
 [node name="BigRock18" parent="Decorations" instance=ExtResource("10_j5ip0")]
 position = Vector2(313, 175)
@@ -1109,10 +1109,16 @@ position = Vector2(313, 175)
 position = Vector2(35, 141)
 
 [node name="tall_rock" parent="Decorations" instance=ExtResource("11_ykduf")]
-position = Vector2(307, 68)
+position = Vector2(317, 76)
+
+[node name="tall_rock12" parent="Decorations" instance=ExtResource("11_ykduf")]
+position = Vector2(313, 71)
 
 [node name="tall_rock5" parent="Decorations" instance=ExtResource("11_ykduf")]
-position = Vector2(314, 94)
+position = Vector2(316, 93)
+
+[node name="tall_rock13" parent="Decorations" instance=ExtResource("11_ykduf")]
+position = Vector2(313, 99)
 
 [node name="tall_rock8" parent="Decorations" instance=ExtResource("11_ykduf")]
 position = Vector2(308, 130)

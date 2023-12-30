@@ -7,6 +7,7 @@ signal died
 @export var max_health := 10
 var health: int
 var player: CharacterBody2D
+var is_died = false
 
 func _ready() -> void:
 	health = max_health
@@ -15,12 +16,11 @@ func _ready() -> void:
 func damage() -> void:
 	health -= 1
 	health_changed.emit()
-	if health <= 0:
+	if health <= 0 and not is_died:
+		is_died = true
+		died.emit()
 		if get_parent() == player:
 			GameEvent.player_died.emit()
 		elif get_tree().get_nodes_in_group("enemies").has(get_parent()):
-			GameEvent.enemies_count -= 1
-			print(GameEvent.enemies_count)
 			if GameEvent.enemies_count == 0:
 				GameEvent.win.emit()
-		died.emit()

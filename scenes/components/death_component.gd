@@ -10,6 +10,8 @@ func _ready() -> void:
 
 
 func on_died() -> void:
+	if get_parent() is OrcEnemy:
+		GameEvent.enemies_count -= 1
 	show()
 	animation_player.play("died")
 	await animation_player.animation_finished
